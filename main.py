@@ -18,12 +18,19 @@ def parse_month(month):
         "December": "12"
     }
 
-    return months[a]
+    return months[month]
 
 #REMOVE PASS AND FIX THIS FUNCTION
 #parse_date function should return the date formated as MM/DD/YYYY
 #DO NOT REMOVE THIS FUNCTION
 def parse_date(date):
+    date = date.replace(',','')
+    date = date.split()
+    day = date[1]
+    year = date[2]
+    date = date[0]
+    date = parse_month(date)
+    date = (date, day, year)
     #a = parse_month(a)
     #date = (a, b, c)
     return '/'.join(date)
@@ -32,15 +39,8 @@ def parse_date(date):
 #REMOVE PASS AND YOUR CODE GOES HERE
 if __name__ == '__main__':
     a = input()
-
-    a = a.replace(',','')
-    a = a.split()
-    b = a[1]
-    c = a[2]
-    a = a[0]
-    a = parse_month(a)
-    date = (a, b, c)
-    results = parse_date(date)
+    parse_date(a)
+    results = parse_date(a)
 
     print(results)
 
