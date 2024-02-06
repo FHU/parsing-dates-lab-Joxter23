@@ -23,9 +23,9 @@ def parse_month(month):
 #REMOVE PASS AND FIX THIS FUNCTION
 #parse_date function should return the date formated as MM/DD/YYYY
 #DO NOT REMOVE THIS FUNCTION
-def parse_date(a, b, c):
+def parse_date(a):
     a = parse_month(a)
-    date = (a, b, c)
+    date = (a)
     return '/'.join(date)
 
 
@@ -35,10 +35,10 @@ if __name__ == '__main__':
 
     a = a.replace(',','')
     a = a.split()
-    
+
     b = a[1]
     c = a[2]
     a = a[0]
-    results = parse_date(a,b,c)
+    results = parse_date(a)
 
     print(results)
