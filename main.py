@@ -27,6 +27,11 @@ def parse_date(date):
     date = date.replace(',','')
     date = date.split()
     day = date[1]
+    if len(day) == 1:
+        day = '0' + day
+    else:
+        pass
+
     year = date[2]
     date = date[0]
     date = parse_month(date)
@@ -44,5 +49,3 @@ if __name__ == '__main__':
 
     print(results)
 
-#testing
-    #testing 2
